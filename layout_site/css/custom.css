@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -20,6 +22,7 @@ body {
     width: 100%;
     z-index: 999;
     padding: 20px 0;
+    font-family: 'Ubuntu', sans-serif;
     background-color: #121721;
     border-bottom: solid #1b202a 1px;
 }
