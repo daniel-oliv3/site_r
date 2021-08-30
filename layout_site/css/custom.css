@@ -17,11 +17,6 @@ body {
     flex-direction: column;
 }
 
-.teste-texto {
-    color: #fff;
-    margin-bottom: 20px;
-}
-
 .max-width {
     max-width: 1300px;
     padding: 0 10px;
@@ -34,7 +29,8 @@ body {
     z-index: 999;
     padding: 20px 0;
     font-family: 'Ubuntu', sans-serif;
-    background-color: #121721;
+    /*background-color: #121721;*/
+    background-color: none;
     border-bottom: solid #1b202a 1px;
 }
 
@@ -109,6 +105,66 @@ body {
         max-width: 930px;
     }
 }
+
+section {
+    padding: 50px 0;
+}
+
+@media (max-width: 690px){
+    section {
+        padding: 20px 0;
+    }
+}
+
+.top {
+    color: #fff;
+    display: flex;
+    background: url('../images/topo_v2.jpg');
+    height: 100vh;
+    min-height: 500px;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.top .max-width {
+    width: 100%;
+    display: flex;
+}
+
+.top .top-content .text-1 {
+    font-size: 25px;
+    margin-top: 100px;
+}
+
+.top .top-content .text-2 {
+    font-size: 55px;
+    font-weight: 400;
+    margin-left: -3px;
+}
+
+.top .top-content .text-3 {
+    font-size: 32px;
+    font-weight: 400;
+    margin: 5px 0;
+}
+
+.top .top-content a {
+    display: inline-block;
+    background: #b02ab7;
+    color: #fff;
+    font-size: 25px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 300;
+    border-radius: 6px;
+    border: 2px solid #b02ab7;
+    transition: all 0.3s ease;
+}
+
+.top .top-content a:hover {
+    color: #b02ab7;
+    background: none;
+}    
 
 footer {
     background-color: #121721;
