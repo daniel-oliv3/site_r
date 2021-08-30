@@ -7,8 +7,19 @@
     text-decoration: none;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     background-color: #0c0f16;
+    display: flex;
+    flex-direction: column;
+}
+
+.teste-texto {
+    color: #fff;
+    margin-bottom: 20px;
 }
 
 .max-width {
@@ -97,4 +108,21 @@ body {
     .max-width {
         max-width: 930px;
     }
+}
+
+footer {
+    background-color: #121721;
+    padding: 25px 23px;
+    color: #fff;
+    text-align: center;
+    margin-top: auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+footer span a {
+    color: #547ec7;
+}
+
+footer span a:hover {
+    color: #fff;
 }
