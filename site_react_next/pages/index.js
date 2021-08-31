@@ -135,6 +135,10 @@ function Home() {
             </div>
         </section>
 
+        <footer>
+            <span>Create By <a href="#">Sapup3</a></span>
+        </footer>
+
 
         <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" strategy="beforeInteractive"/>
         <Script src="custom.js" strategy="afterInteractive"/>    

@@ -382,3 +382,20 @@ section {
         margin: 0;
     }
 }
+
+footer {
+    background-color: #121721;
+    padding: 25px 23px;
+    color: #fff;
+    text-align: center;
+    margin-top: auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+footer span a {
+    color: #547ec7;
+}
+
+footer span a:hover {
+    color: #fff;
+}
