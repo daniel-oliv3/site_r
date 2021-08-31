@@ -119,10 +119,11 @@ section {
 .top {
     color: #fff;
     display: flex;
-    background: url('../images/topo_v2.jpg');
+    background: url('../images/topo_v2.jpg') no-repeat center;
     height: 100vh;
     min-height: 500px;
     background-attachment: fixed;
+    background-size: cover;
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -165,6 +166,77 @@ section {
     color: #b02ab7;
     background: none;
 }    
+
+.services {
+    color: #fff;
+    background-color: #0c0f16;
+    font-family: 'poppins', sans-serif;
+}
+
+.services .title {
+    text-align: center;
+    margin: 40px 0;
+    font-weight: 400;
+    font-size: 35px;
+}
+
+.services .serv-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.services .serv-content .card {
+    width: calc(33% - 20px);
+    background-color: #1b202a;
+    text-align: center;
+    border-radius: 6px;
+    padding: 50px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.services .serv-content .card:hover {
+    background: #b02ab7;
+}
+
+.services .serv-content .card i {
+    font-size: 50px;
+    color: #b02ab7;
+    transition: all 0.3s ease;
+}
+
+.services .serv-content .card:hover i {
+    color: #fff;
+}
+
+.services .serv-content .card .box {
+    transition: all 0.3s ease;
+}
+
+.services .serv-content .card:hover .box {
+    transform: scale(1.05);
+}
+    
+.services .serv-content .card .text {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+@media (max-width: 947px){
+    .services .serv-content .card {
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 690px){
+    .services .serv-content .card {
+        width: 100%;
+    }
+}
 
 footer {
     background-color: #121721;
