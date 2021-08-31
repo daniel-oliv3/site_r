@@ -37,6 +37,43 @@ function Home() {
             </div>
         </section>
 
+        <section class="services" id="services">
+            <div class="max-width">
+                <h2 class="title">Serviços</h2>
+                <div class="serv-content">
+                    <div class="card">
+                        <div class="box">
+                            <i class="fas fa-code"></i>
+                            <div class="text">
+                                Serviços 1
+                            </div>
+                            <p>Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Atirei o pau no gatis, per gatis num morreus. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Todo mundo vê os mas ninguém vê os tombis que eu levo!</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="box">
+                            <i class="fas fa-laptop-code"></i>
+                            <div class="text">
+                                Serviços 2
+                            </div>
+                            <p>Sapien in monti palavris qui num significa nadis i pareci latim. Quem num gosta di mim que vai caçá sua turmis! Copo furadis é disculpa de bebadis, arcu quam euismod magna. Não sou faixa preta cumpadi, sou preto inteiris, inteiris.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="box">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div class="text">
+                                Serviços 3
+                            </div>
+                            <p>Quem manda na minha terra sou euzis! Leite de capivaris, leite de mula manquis sem cabeça. Diuretics paradis num copo é motivis de denguis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" strategy="beforeInteractive"/>
         <Script src="custom.js" strategy="afterInteractive"/>    
