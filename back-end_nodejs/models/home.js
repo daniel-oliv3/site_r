@@ -24,6 +24,10 @@ const Home = db.define('homes', {
         type: Sequelize.STRING,
         allowNull: false
     },
+    image_top:{
+        type: Sequelize.STRING,
+        allowNull: false
+    },
     ser_title: {
         type: Sequelize.STRING,
         allowNull: false
@@ -128,5 +132,8 @@ const Home = db.define('homes', {
 
 //Isso cria a tabela se ela não existir (e não faz nada se já existir)
 //Home.sync();
+
+//verifica se há alguma diferença na tabela, realiza a alteração
+//Home.sync({alter: true});
 
 module.exports = Home;

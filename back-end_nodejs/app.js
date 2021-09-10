@@ -5,8 +5,20 @@ const Home = require('./models/home');
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.send('Olá, Mundo!');
+//Visualizar  
+app.get('/', async (req, res) => {
+    await Home.findOne()
+    .then((data) => {
+        return res.json({
+            erro: false,
+            data
+        });
+    }).catch(() => {
+        return res.status(400).json({
+            erro: true,
+            mensagem: "Erro: Nenhum valor encontrado para a página home!"
+        });
+    });
   });
 
 //Cadastrar  
