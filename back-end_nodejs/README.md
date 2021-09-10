@@ -34,3 +34,6 @@ Comando utilizado para a criação da base de dados
 
 Sequelize é uma biblioteca JavaScript que facilita o gerenciamento de um banco de dados SQL
 ### npm install --save sequelize
+
+Instalar o drive do banco de dados
+### npm install --save mysql2
