@@ -126,7 +126,7 @@ const Home = db.define('homes', {
     }
 });
 
-//Cria a tabela no Banco de dados
-Home.sync();
+//Isso cria a tabela se ela não existir (e não faz nada se já existir)
+//Home.sync();
 
 module.exports = Home;
