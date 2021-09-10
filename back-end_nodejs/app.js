@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const db = require('./models/db');
+const Home = require('./models/home');
 
 app.get('/', function (req, res) {
     res.send('Olá, Mundo!');
