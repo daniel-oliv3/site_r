@@ -77,38 +77,38 @@ function Home( {data} ) {
 
         <section className="contact" id="contact">
             <div className="max-width">
-                <h2 className="title">Contato</h2>
+                <h2 className="title">{data.datahome.cont_title}</h2>
                 <div className="contact-content">
                     <div className="column left">
-                        <p>Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Nec orci ornare consequat.</p>
+                        <p>{data.datahome.cont_desc}</p>
                         <div className="icons">
                             <div className="row">
-                                <i className="fas fa-user"></i>
+                                <i className={data.datahome.cont_icon_emp}></i>
                                 <div className="info">
-                                    <div className="head">Empresa</div>
-                                    <div className="sub-title">Sapup3</div>
+                                    <div className="head">{data.datahome.cont_title_emp}</div>
+                                    <div className="sub-title">{data.datahome.cont_name_emp}</div>
                                 </div>
                             </div>
 
                             <div className="row">
-                                <i className="fas fa-map-marker-alt"></i>
+                                <i className={data.datahome.cont_icon_end}></i>
                                 <div className="info">
-                                    <div className="head">Endereço</div>
-                                    <div className="sub-title">Manaus Amazonas</div>
+                                    <div className="head">{data.datahome.cont_title_end}</div>
+                                    <div className="sub-title">{data.datahome.cont_name_end}</div>
                                 </div>
                             </div>
 
                             <div className="row">
-                                <i className="far fa-envelope"></i>
+                                <i className={data.datahome.cont_icon_email}></i>
                                 <div className="info">
-                                    <div className="head">E-mail</div>
-                                    <div className="sub-title">danieloliveira.webmaster@gmail.com</div>
+                                    <div className="head">{data.datahome.cont_title_email}</div>
+                                    <div className="sub-title">{data.datahome.cont_name_email}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="column right">
-                        <div className="text">Mensagem de Contato</div>
+                        <div className="text">{data.datahome.cont_title_form}</div>
                         <form>
                             <div className="fields">
                                 <div className="field name">
@@ -137,7 +137,7 @@ function Home( {data} ) {
         </section>
 
         <footer>
-            <span>Create By <a href="#">Sapup3</a></span>
+            <span>{data.datahome.footer_desc} <a href={data.datahome.footer_link}>{data.datahome.footer_name}</a></span>
         </footer>
 
 
