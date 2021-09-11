@@ -19,10 +19,10 @@ app.use((req, res, next) => {
 //Visualizar  
 app.get('/', async (req, res) => {
     await Home.findOne()
-    .then((data) => {
+    .then((datahome) => {
         return res.json({
             erro: false,
-            data
+            datahome
         });
     }).catch(() => {
         return res.status(400).json({

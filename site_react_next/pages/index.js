@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Script from 'next/script';
 
-function Home() {
+function Home( {data} ) {
     return (
     <div>
         <Head>
@@ -10,6 +10,7 @@ function Home() {
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
             <title>Site - Sapup3</title>
         </Head>
+        {console.log(data)}
         <nav className="navbar">
             <div className="max-width">
                 <div className="logo">
@@ -29,45 +30,45 @@ function Home() {
         <section className="top" id="top">
             <div className="max-width">
                 <div className="top-content">
-                    <div className="text-1">Temos a solução</div>
-                    <div className="text-2">que a sua empresa precisa</div>
-                    <div className="text-3">Podemos ajudar a sua empresa!</div>
-                    <a href="#">Entrar em Contato</a>
+                    <div className="text-1">{data.datahome.title_top_one}</div>
+                    <div className="text-2">{data.datahome.title_top_two}</div>
+                    <div className="text-3">{data.datahome.title_top_three}</div>
+                    <a href="#">{data.datahome.btn_title_top}</a>
                 </div>
             </div>
         </section>
 
         <section className="services" id="services">
             <div className="max-width">
-                <h2 className="title">Serviços</h2>
+                <h2 className="title">{data.datahome.ser_title}</h2>
                 <div className="serv-content">
                     <div className="card">
                         <div className="box">
-                            <i className="fas fa-code"></i>
+                            <i className={data.datahome.ser_icone_one}></i>
                             <div className="text">
-                                Serviços 1
+                                {data.datahome.ser_title_one}
                             </div>
-                            <p>Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Atirei o pau no gatis, per gatis num morreus. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Todo mundo vê os mas ninguém vê os tombis que eu levo!</p>
+                            <p>{data.datahome.ser_desc_one}</p>
                         </div>
                     </div>
 
                     <div className="card">
                         <div className="box">
-                            <i className="fas fa-laptop-code"></i>
+                            <i className={data.datahome.ser_icone_two}></i>
                             <div className="text">
-                                Serviços 2
+                            {data.datahome.ser_title_two}
                             </div>
-                            <p>Sapien in monti palavris qui num significa nadis i pareci latim. Quem num gosta di mim que vai caçá sua turmis! Copo furadis é disculpa de bebadis, arcu quam euismod magna. Não sou faixa preta cumpadi, sou preto inteiris, inteiris.</p>
+                            <p>{data.datahome.ser_desc_two}</p>
                         </div>
                     </div>
 
                     <div className="card">
                         <div className="box">
-                            <i className="fas fa-mobile-alt"></i>
+                            <i className={data.datahome.ser_icone_three}></i>
                             <div className="text">
-                                Serviços 3
+                            {data.datahome.ser_icone_three}
                             </div>
-                            <p>Quem manda na minha terra sou euzis! Leite de capivaris, leite de mula manquis sem cabeça. Diuretics paradis num copo é motivis de denguis. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!</p>
+                            <p>{data.datahome.ser_desc_three}</p>
                         </div>
                     </div>
                 </div>
@@ -144,6 +145,13 @@ function Home() {
         <Script src="custom.js" strategy="afterInteractive"/>    
     </div>
     );
+  }
+
+  export async function getServerSideProps() {
+      const response = await fetch(`http://localhost:8080/`);
+      const data = await response.json();
+      //console.log(data);
+      return { props: { data } };
   }
   
   export default Home;
