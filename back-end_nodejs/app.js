@@ -1,10 +1,18 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
+
 const app = express();
 
 const Home = require('./models/home');
 
 app.use(express.json());
+
+ //http://localhost:8080/public/upload/home/topo_v2.jpg
+ //public/upload = /files
+ //http://localhost:8080/files/home/topo_v2.jpg
+app.use('/files', express.static(path.resolve(__dirname, "public", "upload")));
+
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -22,7 +30,8 @@ app.get('/', async (req, res) => {
     .then((datahome) => {
         return res.json({
             erro: false,
-            datahome
+            datahome,
+            url: "http://localhost:8080/files/home/"
         });
     }).catch(() => {
         return res.status(400).json({
@@ -52,3 +61,5 @@ app.post('/cadastrar', async (req, res) => {
 app.listen(8080, () => {
     console.log("Servidor iniciado na porta 8080: http://localhost:8080");
   });
+
+ 

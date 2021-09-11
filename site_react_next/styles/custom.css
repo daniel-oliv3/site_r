@@ -118,7 +118,7 @@ section {
 .top {
     color: #fff;
     display: flex;
-    background: url('../public/topo_v2.jpg') no-repeat center;
+    /*background: url('../public/topo_v2.jpg') no-repeat center;*/
     height: 100vh;
     min-height: 500px;
     background-attachment: fixed;

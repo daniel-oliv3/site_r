@@ -27,7 +27,14 @@ function Home( {data} ) {
             </div>
         </nav>
 
-        <section className="top" id="top">
+        <section className="img-top top" id="top">
+            <style>
+                {`.img-top {
+                   background-image: url(`+ data.url + data.datahome.image_top +`); 
+                   background-repeat: no-repeat; 
+                   background-position: center;     
+               }`}
+            </style>
             <div className="max-width">
                 <div className="top-content">
                     <div className="text-1">{data.datahome.title_top_one}</div>
@@ -36,6 +43,7 @@ function Home( {data} ) {
                     <a href="#">{data.datahome.btn_title_top}</a>
                 </div>
             </div>
+            
         </section>
 
         <section className="services" id="services">
