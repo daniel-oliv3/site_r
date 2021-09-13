@@ -120,19 +120,19 @@ function Home( {data} ) {
                         <form>
                             <div className="fields">
                                 <div className="field name">
-                                    <input type="text" placeholder="Digite o nome" required />
+                                    <input type="text" name="name" placeholder="Digite o nome" required />
                                 </div>
                                 <div className="field email">
-                                    <input type="text" placeholder="Digite o e-mail" required />
+                                    <input type="text" name="email" placeholder="Digite o e-mail" required />
                                 </div>
                             </div>
 
                             <div className="field">
-                                <input type="text" placeholder="Digite o assunto" required />
+                                <input type="text" name="subject" placeholder="Digite o assunto" required />
                             </div>
 
                             <div className="field textarea">
-                                <textarea cols="30" rows="10" placeholder="Digite o conteúdo" required></textarea>
+                                <textarea name="content" cols="30" rows="10" placeholder="Digite o conteúdo" required></textarea>
                             </div>
 
                             <div className="button-area">

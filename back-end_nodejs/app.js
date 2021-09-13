@@ -5,6 +5,7 @@ const path = require('path');
 const app = express();
 
 const Home = require('./models/home');
+const Orcamento = require('./models/Orcamento');
 
 app.use(express.json());
 
@@ -56,6 +57,24 @@ app.post('/cadastrar', async (req, res) => {
         });
     });
 });
+
+//Cadastrar Orçamento  
+app.post('/cadastrar-orcamento', async (req, res) => {
+    await Orcamento.create(req.body)
+    .then(() => {
+        return res.json({
+            erro: false,
+            mensagem: "Orçamento enviado com sucesso!"
+        });
+    }).catch(() => {
+        return res.status(400).json({
+            erro: true,
+            mensagem: "Erro: Orçamento não foi enviado!"
+        });
+    });
+});
+
+
 
 
 app.listen(8080, () => {
