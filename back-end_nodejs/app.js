@@ -7,6 +7,7 @@ const app = express();
 const Home = require('./models/home');
 const Orcamento = require('./models/Orcamento');
 
+
 app.use(express.json());
 
  //http://localhost:8080/public/upload/home/topo_v2.jpg
@@ -60,6 +61,15 @@ app.post('/cadastrar', async (req, res) => {
 
 //Cadastrar Orçamento  
 app.post('/cadastrar-orcamento', async (req, res) => {
+
+    await sleep(3000);
+
+    function sleep(ms){
+        return new Promise((resolve) => {
+            setTimeout(resolve, ms);
+        });
+    }
+
     await Orcamento.create(req.body)
     .then(() => {
         return res.json({

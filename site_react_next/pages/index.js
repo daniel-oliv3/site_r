@@ -1,7 +1,62 @@
+import React, { useState } from 'react';
+
 import Head from 'next/head';
 import Script from 'next/script';
 
 function Home( {data} ) {
+
+    const [orcamento, setOrcamento] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        content: ''
+    });
+
+    const [response,  setResponse] = useState({
+        formSave: false,
+        type: '',
+        mensagem: ''
+    });
+
+    const onChangeInput = e => setOrcamento({ ...orcamento, [e.target.name]: e.target.value});
+
+    const sendOrcamento = async e => {
+        e.preventDefault();
+        
+        setResponse({formSave: true});
+
+        try {
+            const res = await fetch('http://localhost:8080/cadastrar-orcamento', {
+                method: 'POST',
+                body: JSON.stringify(orcamento),
+                headers: {'Content-Type': 'application/json'}
+            });
+
+            const responseEnv = await res.json();
+
+            if(responseEnv.erro){
+                setResponse({
+                    formSave: false,
+                    type: 'error',
+                    mensagem: responseEnv.mensagem
+                });
+            }else{
+                setResponse({
+                    formSave: false,
+                    type: 'success',
+                    mensagem: responseEnv.mensagem
+                });
+            }
+
+        }catch(err){
+            setResponse({
+                formSave: false,
+                type: 'error',
+                mensagem: "ERRO: tente mais tarde!"
+            });
+        }
+    }
+
     return (
     <div>
         <Head>
@@ -117,26 +172,27 @@ function Home( {data} ) {
                     </div>
                     <div className="column right">
                         <div className="text">{data.datahome.cont_title_form}</div>
-                        <form>
+                        <form onSubmit={sendOrcamento}>
                             <div className="fields">
                                 <div className="field name">
-                                    <input type="text" name="name" placeholder="Digite o nome" required />
+                                    <input type="text" name="name" placeholder="Digite o nome" onChange={onChangeInput} required />
                                 </div>
                                 <div className="field email">
-                                    <input type="text" name="email" placeholder="Digite o e-mail" required />
+                                    <input type="text" name="email" placeholder="Digite o e-mail" onChange={onChangeInput} required />
                                 </div>
                             </div>
 
                             <div className="field">
-                                <input type="text" name="subject" placeholder="Digite o assunto" required />
+                                <input type="text" name="subject" placeholder="Digite o assunto" onChange={onChangeInput} required />
                             </div>
 
                             <div className="field textarea">
-                                <textarea name="content" cols="30" rows="10" placeholder="Digite o conteúdo" required></textarea>
+                                <textarea name="content" cols="30" rows="10" placeholder="Digite o conteúdo" onChange={onChangeInput} required></textarea>
                             </div>
 
                             <div className="button-area">
-                                <button type="submit">Enviar</button>
+                                {response.formSave ? "salvando": <button type="submit">Enviar</button>}
+                                
                             </div>
                         </form>
                     </div>
