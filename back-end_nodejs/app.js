@@ -62,13 +62,13 @@ app.post('/cadastrar', async (req, res) => {
 //Cadastrar Orçamento  
 app.post('/cadastrar-orcamento', async (req, res) => {
 
-    await sleep(3000);
+    /*await sleep(3000);
 
     function sleep(ms){
         return new Promise((resolve) => {
             setTimeout(resolve, ms);
         });
-    }
+    }*/
 
     await Orcamento.create(req.body)
     .then(() => {

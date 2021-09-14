@@ -172,6 +172,10 @@ function Home( {data} ) {
                     </div>
                     <div className="column right">
                         <div className="text">{data.datahome.cont_title_form}</div>
+
+                        {response.type === 'error'? <p className="alert-danger">{response.mensagem}</p>: ""}
+                        {response.type === 'success'? <p className="alert-success">{response.mensagem}</p> : ""}
+
                         <form onSubmit={sendOrcamento}>
                             <div className="fields">
                                 <div className="field name">
@@ -191,7 +195,7 @@ function Home( {data} ) {
                             </div>
 
                             <div className="button-area">
-                                {response.formSave ? "salvando": <button type="submit">Enviar</button>}
+                                {response.formSave ? <button type="submit" disabled>Enviando</button>: <button type="submit">Enviar</button>}
                                 
                             </div>
                         </form>
