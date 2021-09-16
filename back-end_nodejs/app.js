@@ -59,6 +59,13 @@ app.post('/cadastrar', async (req, res) => {
     });
 });
 
+//Listar Orçamento
+app.get("/listar-orcamento", async (req, res) => {
+    res.send("listar orcamento");
+});
+
+
+
 //Cadastrar Orçamento  
 app.post('/cadastrar-orcamento', async (req, res) => {
 
