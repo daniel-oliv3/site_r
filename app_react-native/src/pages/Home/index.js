@@ -2,8 +2,11 @@ import React, {useCallback, useState} from 'react';
 import { useFocusEffect } from '@react-navigation/native';
 import { Alert, Text } from 'react-native';
 
+
+import { Container, ListData, ItemData, TitleItem, DescItem } from './styles';
+
 import api from '../../config/configApi';
-import { FlatList } from 'react-native-gesture-handler';
+
 
 export default function Home(){
 
@@ -27,18 +30,16 @@ export default function Home(){
     )
 
     return (
-        <>
-            <Text>Listar Orçamentos</Text>
-            <FlatList
+        <Container>
+            <ListData
                 data={orcamentos}
                 renderItem={({ item }) => (
-                    <>
-                        <Text>{item.id}</Text>
-                        <Text>{item.name}</Text>
-                        <Text>{item.subject}</Text>
-                    </>
+                    <ItemData>
+                        <TitleItem>{item.id + " - " + item.name}</TitleItem>
+                        <DescItem>{item.subject}</DescItem>
+                    </ItemData>
                 )} keyExtractor={orcamentos => String(orcamentos.id)}
             />
-        </>
+        </Container>
     )
 }

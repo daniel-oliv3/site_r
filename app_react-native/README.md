@@ -21,3 +21,6 @@ Para navegar entre as páginas
 
 Realiza a chamada a API
 ### npm install --save axios
+
+Transforma o CSS em Componentes
+### npm install --save styled-components
